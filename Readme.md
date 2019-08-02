@@ -93,7 +93,7 @@
   |timer|signal: SIGALRM| 
   |congestion control|TCP Tahoe|  
 
-  *Specific implementation of reliable transmission and congestion control: please look over [Design](https://github.com/ssjjcao/CN_BitTorrent/blob/master/Design.pdf)*
+  *Specific implementation of reliable transmission and congestion control: please look over [Design](https://github.com/ssjjcao/P2P_BitTorrent/blob/master/Design.pdf)*
 
 
 
