@@ -5,15 +5,18 @@
 > For more specific details, please look over the document "Design.pdf".  
 > by *ssjjcao* <16302010015@fudan.edu.cn>
 
+[TOC]
+
 ## 1. additional files written for the project
-  |file|description|
-  |:-:|:-|
-  |packet.h|define the structure of a packet and its header|
-  |list.[h&#124;c]|implement data structure of `single linked list`|
-  |store.[h&#124;c]|store information of the chunk(s) this peer has;<br>simulate tracker, manage information of all peers' chunks.|
-  |handler.[h&#124;c]|handle packets received;<br>send and receive chunk data reliably;<br>implement congestion control.|
-  |task_get.[h&#124;c]|initialize and manage GET task from user's cmd|
-  |conn.[h&#124;c]|simulate connection of TCP;<br>define structure(pool) to manage simultaneous downloads.|
+
+|file|description|
+|:-:|:-|
+|packet.h|define the structure of a packet and its header|
+|list.[h&#124;c]|implement data structure of `single linked list`|
+|store.[h&#124;c]|store information of the chunk(s) this peer has;<br>simulate tracker, manage information of all peers' chunks.|
+|handler.[h&#124;c]|handle packets received;<br>send and receive chunk data reliably;<br>implement congestion control.|
+|task_get.[h&#124;c]|initialize and manage GET task from user's cmd|
+|conn.[h&#124;c]|simulate connection of TCP;<br>define structure(pool) to manage simultaneous downloads.|
 
 ## 2. some structures
   (1) GET task  
@@ -27,7 +30,7 @@
       char output[BT_FILENAME_LEN]; //output file
     } task_get_t;
 ```
-  
+
   (2) chunk and chunk buffer
 ```
     typedef struct chunk_s {
@@ -83,15 +86,15 @@
 ```
 
 > In fact, I only implement simultaneous download from other peers.   
-> up_pool_t is useless to some extent, just in consistence with down_pool_t.
+> up_pool_t is useless in my implement, just in consistence with down_pool_t.
 
 ## 3. methods used to implement reliable transmission and congestion control
-  |function|method|
-  |:-:|:-:|
-  |reliable transmission|GBN| 
-  |simultaneous transmission|connection pool(a structure)|
-  |timer|signal: SIGALRM| 
-  |congestion control|TCP Tahoe|  
+|function|method|
+|:-:|:-:|
+|reliable transmission|GBN|
+|simultaneous transmission|connection pool(a structure)|
+|timer|signal: SIGALRM|
+|congestion control|TCP Tahoe|
 
   *Specific implementation of reliable transmission and congestion control: please look over [Design](https://github.com/ssjjcao/P2P_BitTorrent/blob/master/Design.pdf)*
 
