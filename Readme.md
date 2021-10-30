@@ -2,10 +2,9 @@
 
 > Note:  
 > This document is written to describe my code design and implementation in general.  
-> For more specific details, please look over the document "Design.pdf".  
+> For more specific details, please look over the document [*Design.pdf*](https://github.com/ssjjcao/P2P_BitTorrent/blob/master/Design.pdf).  
 > by *ssjjcao* <16302010015@fudan.edu.cn>
 
-[TOC]
 
 ## 1. additional files written for the project
 
